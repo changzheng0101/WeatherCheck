@@ -1,5 +1,3 @@
-
-
 <template>
   <main class="container text-white">
     <div class="pt-4 mb-8 relative">
@@ -56,6 +54,12 @@
         </ul>
       </template>
     </div>
+    <suspense>
+      <city-list />
+      <template #fallback>
+        <p>Loading....</p>
+      </template>
+    </suspense>
   </main>
 </template>
 
@@ -63,6 +67,7 @@
 import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import CityList from "../components/CityList.vue";
 
 const mapboxAPIKey =
   "pk.eyJ1Ijoiam9obmtvbWFybmlja2kiLCJhIjoiY2t5NjFzODZvMHJkaDJ1bWx6OGVieGxreSJ9.IpojdT3U3NENknF6_WhR2Q";
@@ -94,7 +99,7 @@ const previewCity = (searchResult) => {
   const [city, state] = searchResult.place_name.split(",");
   router.push({
     name: "cityView",
-    params: { city: city.replace(" ",""), state: state.replace(" ","") },
+    params: { city: city.replace(" ", ""), state: state.replace(" ", "") },
     query: {
       lat: searchResult.geometry.coordinates[1],
       lng: searchResult.geometry.coordinates[0],
