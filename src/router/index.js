@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import CityView from '../views/CityView.vue'
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
@@ -8,7 +9,8 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
-    }
+    },
+    { path: '/cityView/:state/:city', name: 'cityView', component: CityView }
   ]
 })
 
