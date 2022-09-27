@@ -57,7 +57,7 @@
     <suspense>
       <city-list />
       <template #fallback>
-        <city-card-skeleton />
+        <city-card-skeleton v-for="i in getCityNum()" :key="i" />
       </template>
     </suspense>
   </main>
@@ -77,6 +77,11 @@ const queryTimeout = ref(null);
 const mapboxQueryResult = ref(null);
 const searchError = ref(null);
 const router = useRouter();
+
+const getCityNum = () => {
+  const data = JSON.parse(localStorage.getItem("savedCities"));
+  return data.length;
+};
 
 const getSearchResults = () => {
   clearTimeout(queryTimeout.value);
