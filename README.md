@@ -1,17 +1,13 @@
 # weatherCheck
 
-This template should help get you started developing with Vue 3 in Vite.
+简单的调用 API 然后展示天气。
 
-## Recommended IDE Setup
+## 页面展示
+![mainPage](./ShowImg/mainPage.png)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
+![weatherView](./ShowImg/WeatherView.jpg)
+## 运行项目
+首先安装对应的依赖
 ```sh
 npm install
 ```
